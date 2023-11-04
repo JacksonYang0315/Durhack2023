@@ -1,0 +1,12 @@
+import sqlite3
+
+# 连接到数据库，如果不存在则会创建它
+conn = sqlite3.connect('mydatabase.db')
+
+conn.execute('''
+    CREATE TABLE clothes(
+        id INTEGER PRIMARY KEY,
+        username TEXT,
+        email TEXT
+    )
+''')
