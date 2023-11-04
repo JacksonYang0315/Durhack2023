@@ -1,21 +1,20 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>三分網站</title>
+    <title>specific</title>
     <style>
       /* 全局樣式 */
       body {
-        font-family: Arial, sans-serif;
+        font-family: 'fantasy', cursive; /* 使用 fantasy 字体 */
         margin: 0;
         padding: 0;
       }
       /* 分區樣式 */
       .section {
         height: 100vh; /* 每個區域佔滿整個視窗高度 */
-        width: 33.33%; /* 三個區域平均分佈 */
         float: left; /* 左浮動使區域並排 */
         box-sizing: border-box; /* 讓內邊距和邊框計算在內容寬度內 */
         padding: 20px;
@@ -23,30 +22,50 @@
       }
       /* 區域1樣式 */
       .section1 {
-        background-color: #87CEEB; /* 淡藍色背景 */
+        background-color: #d0dee3; /* 淡藍灰色背景 */
+        width: 20%; /* 左區域佔 20% 寬度 */
       }
       /* 區域2樣式 */
       .section2 {
         background-color: #FFFFE0; /* 淡黃色背景 */
+        width: 50%; /* 中間區域佔 50% 寬度 */
       }
       /* 區域3樣式 */
       .section3 {
         background-color: #f2f2f2; /* 淡灰色背景 */
+        width: 30%; /* 右區域佔 30% 寬度 */
       }
     </style>
   </head>
   <body>
     <div class="section section1">
-      <h1>區域 1</h1>
+      <h1>filter</h1>
       <p>這是第一個區域的內容。</p>
+      <div class="sidebar">
+        <button id="toggle-menu">Menu</button>
+        <div class="filter hidden-menu">Color</div>
+        <div class="filter hidden-menu">Price</div>
+        <div class="filter hidden-menu">Size</div>
+        <div class="filter hidden-menu">Material</div>
+      </div>
     </div>
     <div class="section section2">
-      <h1>區域 2</h1>
+      <h1>choice</h1>
       <p>這是第二個區域的內容。</p>
     </div>
     <div class="section section3">
-      <h1>區域 3</h1>
+      <h1>your look</h1>
       <p>這是第三個區域的內容。</p>
     </div>
+    <script>
+      const toggleButton = document.getElementById('toggle-menu');
+      const hiddenMenu = document.querySelectorAll('.hidden-menu');
+  
+      toggleButton.addEventListener('click', () => {
+        hiddenMenu.forEach((menu) => {
+          menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+        });
+      });
+    </script>
   </body>
 </html>
