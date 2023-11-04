@@ -1,0 +1,14 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "Open choose_page_no2.html",
+            "file": "/Users/apple/Documents/GitHub/Durhack2023/resource/2021專案/new/templates/choose_page_no2.html"
+        }
+    ]
+}

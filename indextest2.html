@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Page with Filters and Try-On</title>
+<style>
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 2px 0px 5px rgba(0,0,0,0.1);
+    height: 100vh; /* Full height */
+  }
+  .filter {
+    margin: 5px 0;
+    padding: 10px;
+    background: #f0f0f0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%; /* Full width of sidebar */
+  }
+  .filter:hover {
+    background-color: #f6d365;
+  }
+  .content {
+    flex-grow: 1;
+    padding: 20px;
+  }
+  .products {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  .product {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s;
+  }
+  .product:hover {
+    transform: scale(1.05);
+  }
+  .try-on {
+    text-align: center;
+    padding: 20px;
+    background: #fff;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s;
+  }
+  .try-on:hover {
+    background-color: #f6d365;
+    color: white;
+  }
+  .search-bar {
+  width: 50%;
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 16px;
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="filter">Color</div>
+  <div class="filter">Price</div>
+  <div class="filter">Size</div>
+  <div class="filter">Material</div>
+</div>
+
+<div class="content">
+    <div class="header">
+        <input type="text" class="search-bar" placeholder="Search for fashion...">
+      </div>
+  <div class="products">
+    <!-- Example Product -->
+    <div class="product">Product 1</div>
+    <div class="product">Product 2</div>
+    <div class="product">Product 3</div>
+    <!-- Add more products as needed -->
+  </div>
+
+  <button class="try-on">Try Me On!</button>
+</div>
+
+</body>
+</html>
