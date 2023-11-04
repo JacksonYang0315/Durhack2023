@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>三分網站</title>
+    <style>
+      /* 全局樣式 */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      /* 分區樣式 */
+      .section {
+        height: 100vh; /* 每個區域佔滿整個視窗高度 */
+        width: 33.33%; /* 三個區域平均分佈 */
+        float: left; /* 左浮動使區域並排 */
+        box-sizing: border-box; /* 讓內邊距和邊框計算在內容寬度內 */
+        padding: 20px;
+        text-align: center;
+      }
+      /* 區域1樣式 */
+      .section1 {
+        background-color: #87CEEB; /* 淡藍色背景 */
+      }
+      /* 區域2樣式 */
+      .section2 {
+        background-color: #FFFFE0; /* 淡黃色背景 */
+      }
+      /* 區域3樣式 */
+      .section3 {
+        background-color: #f2f2f2; /* 淡灰色背景 */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="section section1">
+      <h1>區域 1</h1>
+      <p>這是第一個區域的內容。</p>
+    </div>
+    <div class="section section2">
+      <h1>區域 2</h1>
+      <p>這是第二個區域的內容。</p>
+    </div>
+    <div class="section section3">
+      <h1>區域 3</h1>
+      <p>這是第三個區域的內容。</p>
+    </div>
+  </body>
+</html>
