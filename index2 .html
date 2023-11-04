@@ -32,21 +32,28 @@
       }
       /* 修改字體 */
       body, button {
-        font-family: 'fantasy', sans-serif; /* 在這裡指定字體為'fantasy' */
+        font-family: 'cursive', cursive; /* 在這裡指定字體為'cursive' */
+      }
+      /* 自定义按钮大小 */
+      .btn-super-lg {
+        font-size: 24px; /* 修改字体大小 */
+        padding: 20px 40px; /* 修改内边距 */
+      }
+      /* 按钮间距 */
+      .button-container {
+        margin: 20px; /* 增加按钮容器的外边距 */
       }
     </style>
   </head>
   <body>
     <div class="centered-container">
-      <div>
-        <button type="button" class="btn btn-light-blue btn-lg">Specific clothes</button>
-        <button type="button" class="btn btn-light-yellow btn-lg disabled">Find style</button>
+      <div class="button-container">
+        <button type="button" class="btn btn-light-blue btn-super-lg">Specific clothes</button>
+      </div>
+      <div class="button-container">
+        <button type="button" class="btn btn-light-yellow btn-super-lg">Find style</button>
       </div>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-  </body>
-</html>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQ
