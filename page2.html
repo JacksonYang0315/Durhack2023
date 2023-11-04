@@ -1,52 +1,164 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE edge">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>三分網站</title>
+    <title>specific</title>
     <style>
       /* 全局樣式 */
       body {
-        font-family: Arial, sans-serif;
+        font-family: 'fantasy', cursive;
         margin: 0;
         padding: 0;
       }
       /* 分區樣式 */
       .section {
-        height: 100vh; /* 每個區域佔滿整個視窗高度 */
-        width: 33.33%; /* 三個區域平均分佈 */
-        float: left; /* 左浮動使區域並排 */
-        box-sizing: border-box; /* 讓內邊距和邊框計算在內容寬度內 */
+        height: 100vh;
+        float: left;
+        box-sizing: border-box;
         padding: 20px;
         text-align: center;
       }
       /* 區域1樣式 */
       .section1 {
-        background-color: #87CEEB; /* 淡藍色背景 */
+        background-color: #d0dee3;
+        width: 20%;
       }
       /* 區域2樣式 */
       .section2 {
-        background-color: #FFFFE0; /* 淡黃色背景 */
+        background-color: #FFFFE0;
+        width: 50%;
       }
       /* 區域3樣式 */
       .section3 {
-        background-color: #f2f2f2; /* 淡灰色背景 */
+        background-color: #f2f2f2;
+        width: 30%;
+      }
+      /* 按鈕樣式 */
+      button {
+        font-family: cursive;
+        font-size: 16px; /* 更改其他按鈕的字體大小 */
+      }
+      /* 按鈕樣式 - Menu、Price、Size和Material的字體大小 */
+      .menu-button, .color-button, .price-button, .size-button, .material-button {
+        font-size: 30px; /* 更改Menu、Price、Size和Material的字體大小 */
+      }
+      /* 隱藏下拉選單 */
+      .hidden-menu, .hidden-color, .hidden-price, .hidden-size, .hidden-material {
+        display: none;
       }
     </style>
   </head>
   <body>
     <div class="section section1">
-      <h1>區域 1</h1>
+      <h1>filter</h1>
       <p>這是第一個區域的內容。</p>
+      <div class="sidebar">
+        <button id="toggle-menu" class="menu-button">Menu</button>
+        <div class="filter hidden-menu">
+          <button id="toggle-color" class="color-button">Color</button>
+          <div class="filter hidden-color">
+            <button>Black</button>
+          </div>
+          <div class="filter hidden-color">
+            <button>White</button>
+          </div>
+          <div class="filter hidden-color">
+            <button>Grey</button>
+          </div>
+        </div>
+        <div class="filter hidden-menu">
+          <button id="toggle-price" class="price-button">Price</button>
+          <div class="filter hidden-price">
+            <button>under 100 pounds</button>
+          </div>
+          <div class="filter hidden-price">
+            <button>100 to 500 pounds</button>
+          </div>
+          <div class="filter hidden-price">
+            <button>over 500 pounds</button>
+          </div>
+        </div>
+        <div class="filter hidden-menu">
+          <button id="toggle-size" class="size-button">Size</button>
+          <div class="filter hidden-size">
+            <button>Small</button>
+          </div>
+          <div class="filter hidden-size">
+            <button>Medium</button>
+          </div>
+          <div class="filter hidden-size">
+            <button>Large</button>
+          </div>
+        </div>
+        <div class="filter hidden-menu">
+          <button id="toggle-material" class="material-button">Material</button>
+          <div class="filter hidden-material">
+            <button>Cotton</button>
+          </div>
+          <div class="filter hidden-material">
+            <button>Silk</button>
+          </div>
+          <div class="filter hidden-material">
+            <button>Wooler</button>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="section section2">
-      <h1>區域 2</h1>
+      <h1>choice</h1>
       <p>這是第二個區域的內容。</p>
     </div>
     <div class="section section3">
-      <h1>區域 3</h1>
+      <h1>your look</h1>
       <p>這是第三個區域的內容。</p>
     </div>
+    <script>
+      const toggleButton = document.getElementById('toggle-menu');
+      const hiddenMenu = document.querySelectorAll('.hidden-menu');
+
+      const toggleColor = document.getElementById('toggle-color');
+      const hiddenColor = document.querySelectorAll('.hidden-color');
+
+      const togglePrice = document.getElementById('toggle-price');
+      const hiddenPrice = document.querySelectorAll('.hidden-price');
+
+      const toggleSize = document.getElementById('toggle-size');
+      const hiddenSize = document.querySelectorAll('.hidden-size');
+
+      const toggleMaterial = document.getElementById('toggle-material');
+      const hiddenMaterial = document.querySelectorAll('.hidden-material');
+
+      toggleButton.addEventListener('click', () => {
+        hiddenMenu.forEach((menu) => {
+          menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+        });
+      });
+
+      toggleColor.addEventListener('click', () => {
+        hiddenColor.forEach((color) => {
+          color.style.display = color.style.display === 'none' ? 'block' : 'none';
+        });
+      });
+
+      togglePrice.addEventListener('click', () => {
+        hiddenPrice.forEach((price) => {
+          price.style.display = price.style.display === 'none' ? 'block' : 'none';
+        });
+      });
+
+      toggleSize.addEventListener('click', () => {
+        hiddenSize.forEach((size) => {
+          size.style.display = size.style.display === 'none' ? 'block' : 'none';
+        });
+      });
+
+      toggleMaterial.addEventListener('click', () => {
+        hiddenMaterial.forEach((material) => {
+          material.style.display = material.style.display === 'none' ? 'block' : 'none';
+        });
+      });
+    </script>
   </body>
 </html>
