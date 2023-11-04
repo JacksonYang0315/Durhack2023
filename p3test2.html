@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Three-Area Website</title>
+    <style>
+        /* Define the styles for the left, middle, and right areas */
+        .left {
+            background-color:  #fff;; /* Color for the left area */
+            height: 98vh;
+            width: 30%; /* You can adjust the width as needed */
+            float: left; /* This allows the areas to sit side by side */
+
+        }
+
+        .middle {
+            background-color: #3498DB; /* Color for the middle area */
+            height: 98vh;
+            width: 40%; /* You can adjust the width as needed */
+            float: left;
+            position: relative;
+
+        }
+
+        .right {
+            background-color: #27AE60; /* Color for the right area */
+            height: 98vh;
+            width: 30%; /* You can adjust the width as needed */
+            float: left;
+
+        }
+
+        .upload-button {
+        background-color: #4CAF50; /* Button background color */
+        color: white;
+        padding: 50px 80px;
+        border: none;
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        }
+
+        .find-size-button {
+        background-color: #E74C3C; /* Button background color */
+        color: white;
+        padding: 20px 40px;
+        border: none;
+        cursor: pointer;
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        }
+
+        .photo-input-area {
+            border: 2px dashed #000; /* Add a dashed border to create a rectangular space */
+            height: 80%; /* Adjust the height as needed */
+            margin: 10%; /* Add margin for spacing */
+            position: relative
+        }
+        
+        /* Clear the float to prevent layout issues */
+        .clear {
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="left">
+        <h2></h2>
+        <button class="upload-button">Upload Photo</button>
+    </div>
+
+    <div class="middle">
+        <img src="./p2pic.jpg" class="photo-input-area" id="photo-input-area"  height=〝100〞 width=〝100〞>
+        <button class="find-size-button">Find Your Size</button>
+    </div>
+
+    <div class="right">
+        <h2>Right Area</h2>
+        <p>This is the right area of the website.</p>
+    </div>
+
+    <div class="clear"></div> <!-- Clear the float after the three areas -->
+
+</body>
+</html>
