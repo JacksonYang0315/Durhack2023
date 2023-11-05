@@ -26,10 +26,4 @@ Future enhancements planned to enrich the user experience:
 
 ## Getting Started
 
-To set up the project locally, follow these steps:
 
-```bash
-git clone https://github.com/JacksonYang0315/Durhack2023.git
-cd Durhack2023
-npm install # Or yarn install
-npm start # Or yarn start
