@@ -20,7 +20,7 @@
 
         /* Left area styles */
         .left {
-            background-image: url("./R.jpg");
+            background-image: url("http://localhost:3000/pic/R1.jpg");
             background-size: cover;
             background-repeat: no-repeat;
             height: 100vh;
@@ -30,7 +30,7 @@
 
         /* Middle area styles */
         .middle {
-            background-image: url("./p2pic.jpg");
+            background-image: url("http://localhost:3000/pic/R3.jpg");
             background-size: cover;
             background-repeat: no-repeat;
             height: 100vh;
@@ -157,13 +157,13 @@
 </head>
 
 <body>
-    <div class="left">
-        <h2></h2>
-        <button class="upload-button">Upload Photo</button>
+    <div class="left">        
+        <input type="file" id="upload" name="filename" hidden/>
+        <label class="upload-button" for="upload">Choose file</label>
     </div>
 
     <div class="middle">
-        <img src="./R3.jpg" class="photo-input-area" id="photo-input-area" height=〝100〞 width=〝100〞>
+        <img src="http://localhost:3000/pic/R2.jpg" class="photo-input-area" id="photo-input-area" height=〝100〞 width=〝100〞>
 
     </div>
 
@@ -178,13 +178,18 @@
 
                 <label for="fit-range">Fit Preference</label>
                 <input type="range" id="fit-range" name="fit-range" min="0" max="100">
-                <button id="confirm">Find your size & style!</button>
+                <button id="confirm" onclick="pageRedirect()">Find your size & style!</button>
             </div>
         </div>
     </div>
 
     <div class="clear"></div> <!-- Clear the float after the three areas -->
 
+    <script>
+        function pageRedirect() {
+      window.location.replace("http://localhost:3000/indextest4");
+    }
+    </script>
 </body>
 
 </html>
