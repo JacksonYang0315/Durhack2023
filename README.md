@@ -30,6 +30,6 @@ To set up the project locally, follow these steps:
 
 ```bash
 git clone https://github.com/JacksonYang0315/Durhack2023.git
-cd jessies-shopping-cart
+cd Durhack2023
 npm install # Or yarn install
 npm start # Or yarn start
