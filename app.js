@@ -23,6 +23,10 @@ app.get('/upload', (req, res) => {
     res.sendFile(path.join(__dirname, '/p3test2.html'));
 })
 
+app.get('/loader', (req, res) => {
+    res.sendFile(path.join(__dirname, '/loader.html'));
+})
+
 
 app.get('/indextest4', (req, res) => {
     res.sendFile(path.join(__dirname, '/indextest4.html'));
