@@ -55,12 +55,12 @@
       flex-wrap: wrap; /* 自動換行 */
       margin-top: 20px;
     }
-    .product {
+    .product, .hidden-product {
       width: 30%; /* 控制每個產品框框的寬度 */
       text-align: center;
       margin: 10px;
     }
-    .product img {
+    .product img , .hidden-product img{
       width: 100%; /* 讓圖片充滿產品框框 */
     }
     .product-title {
@@ -85,7 +85,7 @@
       font-size: 30px; /* 更改Menu、Color、Price、Size和Material的字體大小- */
     }
     /* 隱藏下拉選單 */
-    .hidden-menu, .hidden-color, .hidden-price, .hidden-size, .hidden-material {
+    .hidden-menu, .hidden-color, .hidden-price, .hidden-size, .hidden-material{
       display: none;
     }
   </style>
@@ -99,7 +99,7 @@
       <div class="filter hidden-menu">
         <button id="toggle-color" class="color-button">Color</button>
         <div class="filter hidden-color">
-          <button>Black</button>
+          <button id="toggle-black">Black</button>
         </div>
         <div class="filter hidden-color">
           <button>White</button>
@@ -160,12 +160,12 @@
         <div class="product-title">Black dress</div>
         <div class="product-description">Zara Black dress, size S</div>
       </div>
-      <div class="product">
+      <div class="filter hidden-product">
         <img src="pic/grey.jpg" alt="Product 2">
         <div class="product-title">Grey dress</div>
         <div class="product-description">COS grey dress, size S</div>
       </div>
-      <div class="product">
+      <div class="filter hidden-product">
         <img src="pic/white.jpg" alt="Product 3">
         <div class="product-title">White dress</div>
         <div class="product-description">H & M white dress, size S</div>
@@ -179,28 +179,32 @@
   <script>
     const toggleButton = document.getElementById('toggle-menu');
     const hiddenMenu = document.querySelectorAll('.hidden-menu');
-
     const toggleColor = document.getElementById('toggle-color');
     const hiddenColor = document.querySelectorAll('.hidden-color');
 
+    const toggleblack = document.getElementById('toggle-black');
+    const hiddenproduct = document.querySelectorAll('.hidden-product');
+
     const togglePrice = document.getElementById('toggle-price');
     const hiddenPrice = document.querySelectorAll('.hidden-price');
-
     const toggleSize = document.getElementById('toggle-size');
     const hiddenSize = document.querySelectorAll('.hidden-size');
-
     const toggleMaterial = document.getElementById('toggle-material');
     const hiddenMaterial = document.querySelectorAll('.hidden-material');
-
     toggleButton.addEventListener('click', () => {
       hiddenMenu.forEach((menu) => {
         menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
       });
     });
-
     toggleColor.addEventListener('click', () => {
       hiddenColor.forEach((color) => {
         color.style.display = color.style.display === 'none' ? 'block' : 'none';
+      });
+    });
+
+    toggleblack.addEventListener('click', () => {
+      hiddenproduct.forEach((product) => {
+        product.style.display = product.style.display === 'none' ? 'block' : 'none';
       });
     });
 
