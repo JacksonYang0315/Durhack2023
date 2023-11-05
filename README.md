@@ -29,7 +29,7 @@ Future enhancements planned to enrich the user experience:
 To set up the project locally, follow these steps:
 
 ```bash
-git clone https://github.com/JacksonYang0315/Durhack2023.git
+git clone <repository-url>
 cd jessies-shopping-cart
 npm install # Or yarn install
 npm start # Or yarn start

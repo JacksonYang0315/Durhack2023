@@ -91,10 +91,33 @@
             border: 1px solid rgba(255, 255, 255, 0.9);
             background-color: rgba(0, 0, 0, 0.7);
         }
+        .cart-icon-container {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 1000;
+}
+
+.cart-icon-container .badge {
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(25%, -25%);
+    font-size: 0.9em;
+}
+
     </style>
 </head>
 
 <body>
+    <div class="cart-icon-container" style="position: fixed; right: 20px; top: 20px; z-index: 1000;">
+        <img src="http://localhost:3000/pic/cart.png" alt="Cart" style="width: 50px; height: 50px;">
+        <span class="badge" style="background-color: red; color: white; padding: 5px 10px; border-radius: 50%; position: absolute; right: 0; top: 0; transform: translate(25%, -25%);">0</span>
+    </div>
     <div class="container">
         <div class="suggestion-panel" id="suggestion-panel">
             <div class="row-title">Show Room</div>
@@ -220,19 +243,27 @@
 
         // ... existing script ...
 
-        // Event listener for checkbox state changes
-        document.querySelectorAll('.add-to-cart-checkbox input[type="checkbox"]').forEach((checkbox) => {
-            checkbox.addEventListener('change', (event) => {
-                if (event.target.checked) {
-                    // Logic when the item is added to the cart
-                    console.log(`${event.target.value} added to cart`);
-                } else {
-                    // Logic when the item is removed from the cart
-                    console.log(`${event.target.value} removed from cart`);
-                }
-                // Update cart UI accordingly
-            })
-        })
+        const badge = document.querySelector('.badge');
+let cartCount = 0;
+
+document.querySelectorAll('.add-to-cart-checkbox input[type="checkbox"]').forEach((checkbox) => {
+    checkbox.addEventListener('change', (event) => {
+        if (event.target.checked) {
+            cartCount++; // Increment on check
+            console.log(`${event.target.value} added to cart`);
+        } else {
+            cartCount--; // Decrement on uncheck
+            console.log(`${event.target.value} removed from cart`);
+        }
+        badge.textContent = cartCount; // Update the badge count
+        if (cartCount > 0) {
+            badge.style.display = 'block'; // Show the badge when count is positive
+        } else {
+            badge.style.display = 'none'; // Hide the badge when count is 0
+        }
+    });
+});
+
 
     </script>
 </body>

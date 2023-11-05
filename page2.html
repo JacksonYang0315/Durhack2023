@@ -85,7 +85,7 @@
       font-size: 30px; /* 更改Menu、Color、Price、Size和Material的字體大小- */
     }
     /* 隱藏下拉選單 */
-    .hidden-menu, .hidden-color, .hidden-price, .hidden-size, .hidden-material{
+    .hidden-menu, .hidden-color, .hidden-price, .hidden-size, .hidden-material, .model-container{
       display: none;
     }
   </style>
@@ -157,6 +157,9 @@
     <div class="product-container">
       <div class="product">
         <img src="pic/black.png" alt="Black dress">
+
+        <button id="imagebutton"></button>
+
         <div class="product-title">Black dress</div>
         <div class="product-description">Zara Black dress, size S</div>
       </div>
@@ -187,10 +190,8 @@
     const hiddenMenu = document.querySelectorAll('.hidden-menu');
     const toggleColor = document.getElementById('toggle-color');
     const hiddenColor = document.querySelectorAll('.hidden-color');
-
     const toggleblack = document.getElementById('toggle-black');
     const hiddenproduct = document.querySelectorAll('.hidden-product');
-
     const togglePrice = document.getElementById('toggle-price');
     const hiddenPrice = document.querySelectorAll('.hidden-price');
     const toggleSize = document.getElementById('toggle-size');
