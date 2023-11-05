@@ -84,6 +84,39 @@
     .menu-button, .color-button, .price-button, .size-button, .material-button {
       font-size: 30px; /* 更改Menu、Color、Price、Size和Material的字體大小- */
     }
+    .cart-icon-container {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 1000;
+    }
+
+    .cart-icon-container{
+    /*background-color: red;*/
+    color: white;
+    padding: 5px 10px;
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(25%, -25%);
+    font-size: 0.9em;
+    }
+
+    .addcart-button {
+            background-color: #000;
+            color: #d4d4d4;
+            padding: 15px 50px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 25px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+            position: absolute;
+            top: 600px;
+    }
+
     /* 隱藏下拉選單 */
     .hidden-menu, .hidden-color, .hidden-price, .hidden-size, .hidden-material, .model-container{
       display: none;
@@ -91,6 +124,10 @@
   </style>
 </head>
 <body>
+  <div class="cart-icon-container" style="position: fixed; right: 20px; top: 20px; z-index: 1000;">
+    <img src="http://localhost:3000/pic/cart.png" alt="Cart" style="width: 50px; height: 50px;">
+    <span class="badge" style="background-color: red; color: white; padding: 5px 10px; border-radius: 50%; position: absolute; right: 0; top: 0; transform: translate(25%, -25%);">0</span>
+  </div>
   <div class="section section1">
     <h1>filter</h1>
     <p></p>
@@ -156,9 +193,10 @@
     <!-- 產品框框容器 -->
     <div class="product-container">
       <div class="product">
-        <img src="pic/black.png" alt="Black dress">
-
-        <button id="imagebutton"></button>
+        <!--img src="pic/black.png" alt="Black dress"-->
+        <button class="image-button">
+          <img src="pic/black.png" alt="Black dress" id="imagebutton">
+        </button>
 
         <div class="product-title">Black dress</div>
         <div class="product-description">Zara Black dress, size S</div>
@@ -180,10 +218,11 @@
     <model-viewer id="prompt-demo" interaction-prompt="none" class="model-container"
                 alt="A 3D model of Neil Armstrong's Spacesuit"
                 src="http://localhost:3000/shared-assets/models/demo_dress.glb" ar shadow-intensity="1" camera-controls
-                touch-action="pan-y" ar-status="not-presenting">
+                touch-action="pan-y" ar-status="not-presenting" style="width: 400px; height: 500px;">
                 <div class="dot" slot="finger0"></div>
                 <div class="dot" slot="finger1"></div>
             </model-viewer>
+            <label class="addcart-button" for="upload">added into cart</label>
   </div>
   <script>
     const toggleButton = document.getElementById('toggle-menu');
@@ -198,6 +237,15 @@
     const hiddenSize = document.querySelectorAll('.hidden-size');
     const toggleMaterial = document.getElementById('toggle-material');
     const hiddenMaterial = document.querySelectorAll('.hidden-material');
+
+    const imageButton = document.getElementById('imagebutton');
+    const hidden3D = document.querySelectorAll('.model-container');
+    imageButton.addEventListener('click', () => {
+      hidden3D.forEach((DDD) => {
+        DDD.style.display = DDD.style.display === 'none' ? 'block' : 'none';
+      });
+    });
+
     toggleButton.addEventListener('click', () => {
       hiddenMenu.forEach((menu) => {
         menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
@@ -232,6 +280,9 @@
         material.style.display = material.style.display === 'none' ? 'block' : 'none';
       });
     });
+
+
+
   </script>
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
 </body>
