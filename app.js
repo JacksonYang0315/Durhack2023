@@ -6,8 +6,17 @@ const path = require('path')
 
 
 app.use('/shared-assets', express.static(path.join(__dirname, '/shared-assets')))
+app.use('/pic', express.static(path.join(__dirname, '/pic')))
+
+
+
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+    res.sendFile(path.join(__dirname, '/index2.html'));
+  })
+
+
+app.get('/specific', (req, res) => {
+    res.sendFile(path.join(__dirname, '/page2.html'));
 })
 
 
