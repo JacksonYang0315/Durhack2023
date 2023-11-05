@@ -27,7 +27,7 @@
             grid-template-rows: repeat(2, 1fr);
             gap: 10px;
             padding: 20px;
-        
+
         }
 
         .models-grid {
@@ -100,56 +100,49 @@
             <div class="row-title">Show Room</div>
             <model-viewer id="prompt-demo" interaction-prompt="none" class="model-container"
                 alt="A 3D model of Neil Armstrong's Spacesuit"
-                src="http://localhost:3000/shared-assets/models/demo_dress.glb" ar
-                shadow-intensity="1"
-                camera-controls touch-action="pan-y" ar-status="not-presenting">
+                src="http://localhost:3000/shared-assets/models/demo_dress.glb" ar shadow-intensity="1" camera-controls
+                touch-action="pan-y" ar-status="not-presenting">
                 <div class="dot" slot="finger0"></div>
                 <div class="dot" slot="finger1"></div>
             </model-viewer>
         </div>
         <div class="fitting-area">
             <div class="model-container">
-                <div class="row-title">ZARA</div>
+                <div class="row-title"><label class="add-to-cart-checkbox"><input type="checkbox" name="cart-item" value="ZARA1">ZARA</div></label>
                 <model-viewer class="model-container" alt="A 3D model of Neil Armstrong's Spacesuit"
-                    src="http://localhost:3000/shared-assets/models/1.glb" ar
-                    shadow-intensity="1"
-                    camera-controls touch-action="pan-y" ar-status="not-presenting"></model-viewer>
+                    src="http://localhost:3000/shared-assets/models/1.glb" ar shadow-intensity="1" camera-controls
+                    touch-action="pan-y" ar-status="not-presenting"></model-viewer>
             </div>
             <div class="model-container">
-                <div class="row-title">NEXT</div>
+                <div class="row-title"><label class="add-to-cart-checkbox"><input type="checkbox" name="cart-item" value="NEXT1">NEXT</div></label>
                 <model-viewer class="model-container" alt="A 3D model of Neil Armstrong's Spacesuit"
-                    src="http://localhost:3000/shared-assets/models/2.glb" ar
-                    shadow-intensity="1"
-                    camera-controls touch-action="pan-y" ar-status="not-presenting"></model-viewer>
+                    src="http://localhost:3000/shared-assets/models/2.glb" ar shadow-intensity="1" camera-controls
+                    touch-action="pan-y" ar-status="not-presenting"></model-viewer>
             </div>
             <div class="model-container">
-                <div class="row-title">COS</div>
+                <div class="row-title"><label class="add-to-cart-checkbox"><input type="checkbox" name="cart-item" value="COS">COS</div>
                 <model-viewer class="model-container" alt="A 3D model of Neil Armstrong's Spacesuit"
                     src="http://localhost:3000/shared-assets/models/3.glb" ar
-                    environment-image="https://modelviewer.dev/shared-assets/environments/moon_1k.hdr"
-                    poster="https://modelviewer.dev/shared-assets/models/NeilArmstrong.webp" shadow-intensity="1"
-                    camera-controls touch-action="pan-y" ar-status="not-presenting"></model-viewer>
-            </div>
-            <div class="model-container">
-                <div class="row-title">NEXT</div>
-                <model-viewer class="model-container" alt="A 3D model of Neil Armstrong's Spacesuit"
-                    src="http://localhost:3000/shared-assets/models/4.glb" ar
                     shadow-intensity="1"
                     camera-controls touch-action="pan-y" ar-status="not-presenting"></model-viewer>
             </div>
             <div class="model-container">
-                <div class="row-title">BERSHKA</div>
+                <div class="row-title"><label class="add-to-cart-checkbox"><input type="checkbox" name="cart-item" value="NEXT2">NEXT</div></label>
                 <model-viewer class="model-container" alt="A 3D model of Neil Armstrong's Spacesuit"
-                    src="http://localhost:3000/shared-assets/models/5.glb" ar
-                    shadow-intensity="1"
-                    camera-controls touch-action="pan-y" ar-status="not-presenting"></model-viewer>
+                    src="http://localhost:3000/shared-assets/models/4.glb" ar shadow-intensity="1" camera-controls
+                    touch-action="pan-y" ar-status="not-presenting"></model-viewer>
             </div>
             <div class="model-container">
-                <div class="row-title">ZARA</div>
+                <div class="row-title"><label class="add-to-cart-checkbox"><input type="checkbox" name="cart-item" value="BERSHKA">BERSHKA</div></label>
                 <model-viewer class="model-container" alt="A 3D model of Neil Armstrong's Spacesuit"
-                    src="http://localhost:3000/shared-assets/models/6.glb" ar
-                    shadow-intensity="1"
-                    camera-controls touch-action="pan-y" ar-status="not-presenting"></model-viewer>
+                    src="http://localhost:3000/shared-assets/models/5.glb" ar shadow-intensity="1" camera-controls
+                    touch-action="pan-y" ar-status="not-presenting"></model-viewer>
+            </div>
+            <div class="model-container">
+                <div class="row-title"><label class="add-to-cart-checkbox"><input type="checkbox" name="cart-item" value="ZARA2">ZARA</div></label>
+                <model-viewer class="model-container" alt="A 3D model of Neil Armstrong's Spacesuit"
+                    src="http://localhost:3000/shared-assets/models/6.glb" ar shadow-intensity="1" camera-controls
+                    touch-action="pan-y" ar-status="not-presenting"></model-viewer>
             </div>
         </div>
     </div>
@@ -223,6 +216,24 @@
         };
 
         modelViewerPrompt.addEventListener('camera-change', interacted);
+
+
+        // ... existing script ...
+
+        // Event listener for checkbox state changes
+        document.querySelectorAll('.add-to-cart-checkbox input[type="checkbox"]').forEach((checkbox) => {
+            checkbox.addEventListener('change', (event) => {
+                if (event.target.checked) {
+                    // Logic when the item is added to the cart
+                    console.log(`${event.target.value} added to cart`);
+                } else {
+                    // Logic when the item is removed from the cart
+                    console.log(`${event.target.value} removed from cart`);
+                }
+                // Update cart UI accordingly
+            })
+        })
+
     </script>
 </body>
 
